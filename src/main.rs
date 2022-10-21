@@ -61,6 +61,11 @@ async fn main() {
 
     println!("Start: {}\t\tEnd: {}", block_number, chain_height);
 
+    if block_number >= chain_height {
+        println!("Exiting. Nothing to do!");
+        return;
+    }
+
     loop {
         let block = web3
             .eth()
