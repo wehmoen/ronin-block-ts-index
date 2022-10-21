@@ -85,6 +85,11 @@ async fn main() {
         block_number += 1;
 
         if block_number >= chain_height {
+            collection
+                .insert_many(&cache, InsertManyOptions::builder().ordered(false).build())
+                .await
+                .expect("Failed to insert blocks into database!");
+            cache.clear();
             break;
         }
     }
