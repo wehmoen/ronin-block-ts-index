@@ -46,7 +46,7 @@ async fn main() {
         .await
         .expect("Failed to load data from database")
     {
-        Some(res) => res.number,
+        Some(res) => res.number + 1,
         None => 1,
     };
 
