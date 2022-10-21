@@ -59,6 +59,8 @@ async fn main() {
 
     let mut cache: Vec<BlockTimestamp> = vec![];
 
+    println!("Start: {}\t\tEnd: {}", block_number, chain_height);
+
     loop {
         let block = web3
             .eth()
@@ -93,6 +95,4 @@ async fn main() {
             break;
         }
     }
-
-    println!("Hello, world!");
 }
